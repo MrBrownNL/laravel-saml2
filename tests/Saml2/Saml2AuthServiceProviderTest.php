@@ -10,13 +10,13 @@ use PHPUnit\Framework\TestCase;
 class Saml2AuthServiceProviderTest extends TestCase
 {
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         m::close();
     }
 
 
-    public function testSimpleMock()
+    public function testSimpleMock(): void
     {
         $this->assertTrue(true);
         /**

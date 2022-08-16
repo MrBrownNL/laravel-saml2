@@ -11,13 +11,13 @@ class Saml2AuthTest extends TestCase
 {
 
 
-    public function tearDown()
+    public function tearDown(): void
     {
         m::close();
     }
 
 
-    public function testIsAuthenticated()
+    public function testIsAuthenticated(): void
     {
         $auth = m::mock('OneLogin\Saml2\Auth');
         $saml2 = new Saml2Auth($auth);
@@ -28,7 +28,7 @@ class Saml2AuthTest extends TestCase
 
     }
 
-    public function testLogin()
+    public function testLogin(): void
     {
         $auth = m::mock('OneLogin\Saml2\Auth');
         $saml2 = new Saml2Auth($auth);
@@ -36,7 +36,7 @@ class Saml2AuthTest extends TestCase
         $saml2->login();
     }
 
-    public function testLogout()
+    public function testLogout(): void
     {
         $expectedReturnTo = 'http://localhost';
         $expectedSessionIndex = 'session_index_value';
@@ -53,7 +53,7 @@ class Saml2AuthTest extends TestCase
     }
 
 
-    public function testAcsError()
+    public function testAcsError(): void
     {
         $auth = m::mock('OneLogin\Saml2\Auth');
         $saml2 = new Saml2Auth($auth);
@@ -67,7 +67,7 @@ class Saml2AuthTest extends TestCase
     }
 
 
-    public function testAcsNotAutenticated()
+    public function testAcsNotAutenticated(): void
     {
         $auth = m::mock('OneLogin\Saml2\Auth');
         $saml2 = new Saml2Auth($auth);
@@ -81,7 +81,7 @@ class Saml2AuthTest extends TestCase
     }
 
 
-    public function testAcsOK()
+    public function testAcsOK(): void
     {
         $auth = m::mock('OneLogin\Saml2\Auth');
         $saml2 = new Saml2Auth($auth);
@@ -94,7 +94,7 @@ class Saml2AuthTest extends TestCase
         $this->assertEmpty($error);
     }
 
-    public function testSlsError()
+    public function testSlsError(): void
     {
         $auth = m::mock('OneLogin\Saml2\Auth');
         $saml2 = new Saml2Auth($auth);
@@ -107,7 +107,7 @@ class Saml2AuthTest extends TestCase
         $this->assertNotEmpty($error);
     }
 
-    public function testSlsOK()
+    public function testSlsOK(): void
     {
         $auth = m::mock('OneLogin\Saml2\Auth');
         $saml2 = new Saml2Auth($auth);
@@ -119,7 +119,7 @@ class Saml2AuthTest extends TestCase
         $this->assertEmpty($error);
     }
 
-    public function testCanGetLastError()
+    public function testCanGetLastError(): void
     {
         $auth = m::mock('OneLogin\Saml2\Auth');
         $saml2 = new Saml2Auth($auth);
@@ -129,7 +129,8 @@ class Saml2AuthTest extends TestCase
         $this->assertSame('lastError', $saml2->getLastErrorReason());
     }
 
-    public function testGetUserAttribute() {
+    public function testGetUserAttribute(): void
+    {
         $auth = m::mock('OneLogin\Saml2\Auth');
         $saml2 = new Saml2Auth($auth);
 
@@ -142,7 +143,8 @@ class Saml2AuthTest extends TestCase
         $this->assertEquals(['test@example.com'], $user->getAttribute('urn:oid:0.9.2342.19200300.100.1.3'));
     }
 
-    public function testParseSingleUserAttribute() {
+    public function testParseSingleUserAttribute(): void
+    {
         $auth = m::mock('OneLogin\Saml2\Auth');
         $saml2 = new Saml2Auth($auth);
 
@@ -157,7 +159,8 @@ class Saml2AuthTest extends TestCase
         $this->assertEquals($user->email, ['test@example.com']);
     }
 
-    public function testParseMultipleUserAttributes() {
+    public function testParseMultipleUserAttributes(): void
+    {
         $auth = m::mock('OneLogin\Saml2\Auth');
         $saml2 = new Saml2Auth($auth);
 
