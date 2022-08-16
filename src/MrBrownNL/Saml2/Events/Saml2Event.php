@@ -1,6 +1,6 @@
 <?php
 
-namespace Aacotroneo\Saml2\Events;
+namespace MrBrownNL\Saml2\Events;
 
 class Saml2Event {
 

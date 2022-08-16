@@ -1,6 +1,6 @@
 <?php
 
-namespace Aacotroneo\Saml2;
+namespace MrBrownNL\Saml2;
 
 
 use App;
@@ -25,4 +25,3 @@ class Saml2AuthServiceProviderTest extends TestCase
     }
 
 }
- 

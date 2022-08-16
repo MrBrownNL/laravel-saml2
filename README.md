@@ -1,3 +1,5 @@
+[![Build Status][ico-travis]][link-travis]
+
 ## Laravel - Saml2
 
 A Laravel package for Saml2 integration as a SP (service provider) based on  [OneLogin](https://github.com/onelogin/php-saml) toolkit, which is much lighter and easier to install than simplesamlphp SP. It doesn't need separate routes or session storage to work!
@@ -235,4 +237,7 @@ Event::listen('MrBrownNL\Saml2\Events\Saml2LogoutEvent', function ($event) {
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
+[ico-travis]: https://img.shields.io/travis/MrBrownNL/laravel-saml2.svg?style=flat-square
+
 [link-original-author]: https://github.com/aacotroneo
+[link-travis]: https://travis-ci.org/MrBrownNL/laravel-saml2
