@@ -17,12 +17,14 @@ Or manually add this to your composer.json:
 
 **composer.json**
 ```json
-"mrbrownnl/laravel-saml2": "*"
+{
+  "mrbrownnl/laravel-saml2": "*"
+}
 ```
 
-Then publish the config files with `php artisan vendor:publish --provider="MrBrownNL\Saml2\Saml2ServiceProvider"`. This will add the files `app/config/saml2_settings.php` & `app/config/saml2/mytestidp1_idp_settings.php`, which you will need to customize.
+Then publish the config files with `php artisan vendor:publish --provider="MrBrownNL\Saml2\Saml2ServiceProvider"`. This will add the files `app/config/saml2_settings.php` & `app/config/saml2/test_idp_settings.php`, which you will need to customize.
 
-The `mytestidp1_idp_settings.php` config is handled almost directly by  [OneLogin](https://github.com/onelogin/php-saml) so you should refer to that for full details, but we'll cover here what's really necessary. There are some other config about routes you may want to check, they are pretty strightforward.
+The `test_idp_settings.php` config is handled almost directly by  [OneLogin](https://github.com/onelogin/php-saml) so you should refer to that for full details, but we'll cover here what's really necessary. There are some other config about routes you may want to check, they are pretty strightforward.
 
 ### Configuration
 
@@ -235,7 +237,7 @@ Event::listen('MrBrownNL\Saml2\Events\Saml2LogoutEvent', function ($event) {
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
 
 [ico-travis]: https://img.shields.io/travis/MrBrownNL/laravel-saml2.svg?style=flat-square
 

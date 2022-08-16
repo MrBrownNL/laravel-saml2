@@ -184,6 +184,23 @@ return $settings = array(
         ),
     ),
 
+    // Configure how to map users from the IdP to users of this app.
+    'user_config' => [
+        // By what field in the local database should the lookup occur.
+        'checkUserBy' => 'email',
+        // The name of the IdP attribute that maps to the field listed in "checkUserBy".
+        'checkUserByFieldName' => 'email',
+    ],
+
+    // Mapping from this app user fields to IdP attribute names. If the attribute
+    // is missing, it is ignored.
+    // Left = this app, right = simplesaml config
+    'attributes_organization' => [
+        'email' => 'email',
+        'firstname' => 'firstName',
+        'lastname' => 'lastName',
+    ],
+
 /* Interoperable SAML 2.0 Web Browser SSO Profile [saml2int]   http://saml2int.org/profile/current
 
    'authnRequestsSigned' => false,    // SP SHOULD NOT sign the <samlp:AuthnRequest>,
