@@ -15,5 +15,4 @@ class Saml2Event {
     {
         return $this->idp;
     }
-
 }
